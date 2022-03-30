@@ -1,10 +1,8 @@
 const Header = () => {
   return (
-    <div>
-      <a href="#">Home</a>
-      <a href="#">News feed</a>
-      <a href="#">Messages</a>
-    </div>
+    <header>
+      <img src="https://avatars.githubusercontent.com/u/31736?s=120&v=4" alt="Logo" />
+    </header>
   )
 }
 
