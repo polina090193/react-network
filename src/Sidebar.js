@@ -19,16 +19,7 @@ export const Sidebar = (
       <ListItemText primary="Dashboard" />
     </ListItemButton>
     <ListItemButton>
-      <ListItemText primary="Orders" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemText primary="Customers" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemText primary="Reports" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Messages" />
     </ListItemButton>
   </React.Fragment>
 );
