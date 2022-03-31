@@ -16,10 +16,19 @@ import ListItemText from '@mui/material/ListItemText';
 export const Sidebar = (
   <React.Fragment>
     <ListItemButton>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Profile" />
     </ListItemButton>
     <ListItemButton>
       <ListItemText primary="Messages" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemText primary="News" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemText primary="Music" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemText primary="Settings" />
     </ListItemButton>
   </React.Fragment>
 );
