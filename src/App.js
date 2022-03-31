@@ -17,9 +17,9 @@ const App = () => {
 export default App; */
 import React from 'react';
 import Box from '@mui/material/Box';
-import { Sidebar } from './Sidebar';
-import Header from './Header';
-import Dashboard from './Dashboard';
+import { Sidebar } from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile';
 
 function AppContent() {
 
@@ -31,7 +31,6 @@ function AppContent() {
         sx={{ display: 'flex' }}
       >
         <Box
-          component="sidebar"
           sx={{
             display: 'block',
             width: '240px'
@@ -39,7 +38,7 @@ function AppContent() {
         >
           {Sidebar}
         </Box>
-        <Dashboard />
+        <Profile />
       </Box>
     </Box>
   );

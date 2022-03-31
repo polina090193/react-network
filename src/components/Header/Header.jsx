@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography';
 import MuiAppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
+import HeaderCss from './Header.module.css'
 
 const AppBar = styled(MuiAppBar, {})(({ theme, open }) => ({
   position: 'static',
@@ -13,6 +14,7 @@ const AppBar = styled(MuiAppBar, {})(({ theme, open }) => ({
 const Header = () => {
   return (
     <AppBar>
+      <div className={HeaderCss.item}>Header</div>
       <Typography
         component="h1"
         variant="h6"
