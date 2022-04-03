@@ -6,10 +6,10 @@ const PostPaper = styled(Paper)`
   background-color: ${yellow[200]};
 `;
 
-const Post = () => {
+const Post = (props) => {
   return (
     <PostPaper>
-      <p className="item">The Post</p>
+      <p className="item">{ props.number }. { props.title }</p>
     </PostPaper>
   )
 }

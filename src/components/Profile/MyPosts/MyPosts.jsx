@@ -9,7 +9,8 @@ const MyPosts = () => {
         <button>Add post</button>
       </div>
       <div className="posts">
-        <Post />
+        <Post number="1" title="The first post" />
+        <Post number="2" title="The second post" />
       </div>
     </div>
   )
