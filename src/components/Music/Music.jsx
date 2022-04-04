@@ -2,9 +2,9 @@ import MusicCss from './Music.module.css'
 
 const Music = () => {
   return (
-    <div>
+    <main>
       <p className="item">Music</p>
-    </div>
+    </main>
   )
 }
 

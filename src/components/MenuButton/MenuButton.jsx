@@ -2,10 +2,9 @@ import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from "react-router-dom";
-import MainMenuButtonCss from './MainMenuButton.module.css'
 import { useLocation } from "react-router-dom"
 
-const MainMenuButton = (props) => {
+const MenuButton = (props) => {
   const location = useLocation()
 
   return (
@@ -15,4 +14,4 @@ const MainMenuButton = (props) => {
   )
 }
 
-export default MainMenuButton
+export default MenuButton

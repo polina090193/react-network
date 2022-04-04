@@ -1,10 +1,13 @@
+import Chat from './Chat/Chat'
+import ContactsList from './ContactsList/ContactsList'
 import MessagesCss from './Messages.module.css'
 
 const Messages = () => {
   return (
-    <div>
-      <p className="item">Messages</p>
-    </div>
+    <main className={MessagesCss.main}>
+      <ContactsList />
+      <Chat className={MessagesCss.chat} />
+    </main>
   )
 }
 

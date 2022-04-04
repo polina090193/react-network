@@ -2,9 +2,9 @@ import NewsCss from './News.module.css'
 
 const News = () => {
   return (
-    <div>
+    <main>
       <p className="item">News</p>
-    </div>
+    </main>
   )
 }
 

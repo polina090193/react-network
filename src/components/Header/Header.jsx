@@ -14,18 +14,20 @@ const AppBar = styled(MuiAppBar, {})(({ theme, open }) => ({
 
 const Header = () => {
   return (
-    <AppBar>
-      <img className={HeaderCss.img} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6_vceltdPf6eFJdd11dVFf14xcwqCH8rtg&usqp=CAU" alt="" />
-      <Typography
-        component="h1"
-        variant="h6"
-        color="inherit"
-        noWrap
-        sx={{ flexGrow: 1 }}
-      >
-        React Network
-      </Typography>
-    </AppBar>
+    <header>
+      <AppBar>
+        <img className={HeaderCss.img} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6_vceltdPf6eFJdd11dVFf14xcwqCH8rtg&usqp=CAU" alt="" />
+        <Typography
+          component="h1"
+          variant="h6"
+          color="inherit"
+          noWrap
+          sx={{ flexGrow: 1 }}
+        >
+          React Network
+        </Typography>
+      </AppBar>
+    </header>
   )
 }
 

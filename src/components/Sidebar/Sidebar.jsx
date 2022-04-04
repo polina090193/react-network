@@ -1,12 +1,14 @@
 import * as React from 'react';
-import MainMenuButton from './MainMenuButton/MainMenuButton'
+import MenuButton from '../MenuButton/MenuButton'
 
-export const Sidebar = (
-  <React.Fragment>
-    <MainMenuButton link="/profile" title="Profile" />
-    <MainMenuButton link="/messages" title="Messages" />
-    <MainMenuButton link="/news" title="News" />
-    <MainMenuButton link="/music" title="Music" />
-    <MainMenuButton link="/settings" title="Settings" />
-  </React.Fragment>
+const Sidebar = (
+  <nav>
+    <MenuButton link="/profile" title="Profile" />
+    <MenuButton link="/messages" title="Messages" />
+    <MenuButton link="/news" title="News" />
+    <MenuButton link="/music" title="Music" />
+    <MenuButton link="/settings" title="Settings" />
+  </nav>
 );
+
+export default Sidebar

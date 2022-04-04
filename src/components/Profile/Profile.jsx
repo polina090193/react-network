@@ -2,10 +2,10 @@ import MyPosts from "./MyPosts/MyPosts"
 
 const Profile = () => {
   return (
-    <div>
+    <main>
       <p className="item">The Profile</p>
       <MyPosts />
-    </div>
+    </main>
   )
 }
 

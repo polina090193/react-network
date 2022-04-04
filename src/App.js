@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import { Sidebar } from './components/Sidebar/Sidebar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
