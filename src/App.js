@@ -21,28 +21,36 @@ import { Sidebar } from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function AppContent() {
 
   return (
-    <Box>
-      <Header />
-      <Box
-        component="main"
-        sx={{ display: 'flex' }}
-      >
+    <BrowserRouter>
+      <Box>
+        <Header />
         <Box
-          sx={{
-            display: 'block',
-            width: '240px'
-          }}
+          component="main"
+          sx={{ display: 'flex' }}
         >
-          {Sidebar}
+          <Box
+            sx={{
+              display: 'block',
+              width: '240px'
+            }}
+          >
+            {Sidebar}
+          </Box>
+          <Routes>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
         </Box>
-        {/* <Profile /> */}
-        <Messages />
       </Box>
-    </Box>
+    </BrowserRouter>
   );
 }
 
