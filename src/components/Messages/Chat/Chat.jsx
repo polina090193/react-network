@@ -8,9 +8,11 @@ const messages = [
   { id: '3', from: 'John', time: '12:02', message: 'How are you?' },
 ]
 
+const messagesElements = messages.map(message => <Message key={message.id} time={message.time} message={message.message} from={message.from} />)
+
 const Chat = () => (
   <div className={ChatCss.chat}>
-    { messages.map(message => <Message key={message.id} time={message.time} message={message.message} from={message.from} />)}
+    { messagesElements }
   </div>
 );
 

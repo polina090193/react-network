@@ -7,9 +7,11 @@ const contacts = [
   { id: '88', name: 'Linda' },
 ]
 
+const contactsElements = contacts.map(contact => <MenuButton key={contact.id} link={contact.id} title={contact.name} />)
+
 const ContactsList = () => (
   <nav style={{width: styleConsts.menuWidth}}>
-    { contacts.map(contact => <MenuButton key={contact.id} link={contact.id} title={contact.name} />)}
+    { contactsElements }
   </nav>
 );
 
