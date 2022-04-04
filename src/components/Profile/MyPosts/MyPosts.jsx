@@ -12,8 +12,7 @@ const MyPosts = () => {
       <h2 className="subheader">My Posts</h2>
       <AddPost />      
       <div className="posts">
-        <Post id="1" title="The first post" />
-        <Post id="2" title="The second post" />
+        { posts.map(post => <Post key={post.id} id={post.id} title={post.title} />)}
       </div>
     </div>
   )

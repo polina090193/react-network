@@ -9,7 +9,7 @@ const PostPaper = styled(Paper)`
 const Post = (props) => {
   return (
     <PostPaper>
-      <p className="item">{ props.number }. { props.title }</p>
+      <p className="item">{ props.id }. { props.title }</p>
     </PostPaper>
   )
 }

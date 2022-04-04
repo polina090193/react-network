@@ -3,14 +3,13 @@ import MenuButton from '../../MenuButton/MenuButton'
 import styleConsts from '../../../styles/styleConsts';
 
 const contacts = [
-  { id: 44, name: 'John' },
-  { id: 88, name: 'Linda' },
+  { id: '44', name: 'John' },
+  { id: '88', name: 'Linda' },
 ]
 
 const ContactsList = () => (
   <nav style={{width: styleConsts.menuWidth}}>
-    <MenuButton link="44" title="John" />
-    <MenuButton link="88" title="Linda" />
+    { contacts.map(contact => <MenuButton key={contact.id} link={contact.id} title={contact.name} />)}
   </nav>
 );
 
