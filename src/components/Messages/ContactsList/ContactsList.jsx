@@ -1,10 +1,11 @@
 import * as React from 'react';
 import MenuButton from '../../MenuButton/MenuButton'
+import styleConsts from '../../../styles/styleConsts';
 
 const ContactsList = () => (
-  <nav>
-    <MenuButton link="44" title="Петя" />
-    <MenuButton link="88" title="Наташа" />
+  <nav style={{width: styleConsts.menuWidth}}>
+    <MenuButton link="44" title="John" />
+    <MenuButton link="88" title="Linda" />
   </nav>
 );
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
+import styleConsts from './styles/styleConsts';
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
@@ -22,15 +23,15 @@ function AppContent() {
           <Box
             sx={{
               display: 'block',
-              width: '240px'
+              width: styleConsts.menuWidth,
             }}
           >
             {Sidebar}
           </Box>
           <Routes>
             <Route path="/profile" element={<Profile />} />
-            <Route path="/messages" element={<Messages />} />
-            <Route path="/news" element={<News />} />
+            <Route path="/messages/*" element={<Messages />} />
+            <Route path="/news/*" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
