@@ -1,10 +1,10 @@
 import MyPosts from "./MyPosts/MyPosts"
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <main>
       <p className="item">The Profile</p>
-      <MyPosts />
+      <MyPosts posts={props.posts} />
     </main>
   )
 }

@@ -10,7 +10,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
-function AppContent() {
+function AppContent(props) {
 
   return (
     <BrowserRouter>
@@ -29,8 +29,8 @@ function AppContent() {
             {Sidebar}
           </Box>
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/messages/*" element={<Messages />} />
+            <Route path="/profile" element={<Profile posts={props.posts} />} />
+            <Route path="/messages/*" element={ <Messages messages={props.messages} contacts={props.contacts} /> } />
             <Route path="/news/*" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
@@ -41,6 +41,6 @@ function AppContent() {
   );
 }
 
-export default function App() {
-  return <AppContent />;
+export default function App(props) {
+  return <AppContent messages={props.messages} contacts={props.contacts} posts={props.posts} />;
 }
