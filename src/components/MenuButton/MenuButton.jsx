@@ -3,7 +3,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom"
-import styleConsts from '../../styles/styleConsts';
+import styleConsts from '@/styles/styleConsts';
 
 const MenuButton = (props) => {
   const location = useLocation()

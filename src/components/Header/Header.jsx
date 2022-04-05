@@ -2,7 +2,7 @@ import Typography from '@mui/material/Typography';
 import MuiAppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import HeaderCss from './Header.module.css'
-import styleConsts from '../../styles/styleConsts';
+import styleConsts from '@/styles/styleConsts';
 
 const AppBar = styled(MuiAppBar, {})(({ theme, open }) => ({
   position: 'static',

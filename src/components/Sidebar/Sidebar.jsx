@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MenuButton from '../MenuButton/MenuButton'
+import MenuButton from '@c/MenuButton/MenuButton'
 
 const Sidebar = (
   <nav>
