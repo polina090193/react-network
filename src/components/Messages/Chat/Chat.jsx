@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ChatCss from './Chat.module.css'
 import Message from './Message/Message';
+import SendMessage from './SendMessage/SendMessage';
 
 
 const Chat = (props) => {
@@ -13,8 +14,10 @@ const Chat = (props) => {
       from={message.from} />)
   )
 
-  return (<div className={ChatCss.chat}>
+  return (
+  <div className={ChatCss.chat}>
     {messagesElements}
+    <SendMessage />
   </div>
   )
 }
