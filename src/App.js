@@ -29,8 +29,8 @@ function AppContent(props) {
             {Sidebar}
           </Box>
           <Routes>
-            <Route path="/profile" element={<Profile posts={props.posts} />} />
-            <Route path="/messages/*" element={ <Messages messages={props.messages} contacts={props.contacts} /> } />
+            <Route path="/profile" element={<Profile state={props.state.profilePage} />} />
+            <Route path="/messages/*" element={ <Messages state={props.state.messagesPage} /> } />
             <Route path="/news/*" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
@@ -42,5 +42,5 @@ function AppContent(props) {
 }
 
 export default function App(props) {
-  return <AppContent messages={props.messages} contacts={props.contacts} posts={props.posts} />;
+  return <AppContent state={props.state} />;
 }
