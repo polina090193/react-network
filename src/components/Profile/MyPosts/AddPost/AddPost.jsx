@@ -5,7 +5,10 @@ const AddPost = (props) => {
 
   const addPostTextarea = React.createRef()
 
-  const onAddPostClick = () => addPost(addPostTextarea.current.value)
+  const onAddPostClick = () => {
+    addPost()
+    updateNewPostText('')
+  }
 
   const onPostChange = () => {
     const newText = addPostTextarea.current.value

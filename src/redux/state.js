@@ -21,12 +21,13 @@ const state = {
   },
 }
 
-export const addPost = (postTitle) => {
+export const addPost = () => {
   const newPost = {
     id: 8,
-    title: postTitle,
+    title: state.profilePage.newPostText,
   }
   state.profilePage.posts.push(newPost)
+  state.profilePage.newPostText = ''
   rerenderEntireTree(state)
 }
 
