@@ -1,5 +1,5 @@
 import React from "react"
-import { addPost } from "@/redux/state"
+import { addPost, updateNewPostText } from "@/redux/state"
 
 const AddPost = (props) => {
 
@@ -7,9 +7,14 @@ const AddPost = (props) => {
 
   const onAddPostClick = () => addPost(addPostTextarea.current.value)
 
+  const onPostChange = () => {
+    const newText = addPostTextarea.current.value
+    updateNewPostText(newText)
+  }
+
   return (
     <div>
-      <textarea ref={addPostTextarea} name="" id="" cols="30" rows="10"></textarea>
+      <textarea onChange={onPostChange} ref={addPostTextarea} value={props.newPostText} name="" id="" cols="30" rows="10" />
       <button onClick={onAddPostClick}>Add Post</button>
     </div>
   )

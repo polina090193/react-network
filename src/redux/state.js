@@ -6,6 +6,7 @@ const state = {
       { id: 1, title: 'The first post' },
       { id: 2, title: 'The second post' },
     ],
+    newPostText: 'hi',
   },
   messagesPage: {
     contacts: [
@@ -26,6 +27,11 @@ export const addPost = (postTitle) => {
     title: postTitle,
   }
   state.profilePage.posts.push(newPost)
+  rerenderEntireTree(state)
+}
+
+export const updateNewPostText = (val) => {
+  state.profilePage.newPostText = val
   rerenderEntireTree(state)
 }
 

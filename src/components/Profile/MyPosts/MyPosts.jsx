@@ -8,7 +8,7 @@ const MyPosts = (props) => {
   return (
     <div>
       <h2 className="subheader">My Posts</h2>
-      <AddPost />      
+      <AddPost newPostText={props.newPostText} />      
       <div className="posts">
         { postsElements }
       </div>
