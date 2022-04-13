@@ -1,18 +1,18 @@
 import React from "react"
-import { addPost, updateNewPostText } from "@/redux/state"
 
 const AddPost = (props) => {
+  console.log('AddPost', props)
 
   const addPostTextarea = React.createRef()
 
   const onAddPostClick = () => {
-    addPost()
-    updateNewPostText('')
+    props.addPost()
+    props.updateNewPostText('')
   }
 
   const onPostChange = () => {
     const newText = addPostTextarea.current.value
-    updateNewPostText(newText)
+    props.updateNewPostText(newText)
   }
 
   return (

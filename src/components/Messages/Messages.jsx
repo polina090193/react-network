@@ -6,8 +6,8 @@ const Messages = (props) => {
 
   return (
     <main className={MessagesCss.main}>
-      <ContactsList contacts={props.state.contacts} />
-      <Chat messages={props.state.messages} className={MessagesCss.chat} />
+      <ContactsList contacts={props.state.messagesPage.contacts} />
+      <Chat messages={props.state.messagesPage.messages} className={MessagesCss.chat} />
     </main>
   )
 }

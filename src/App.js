@@ -1,4 +1,5 @@
 import React from 'react';
+import AppCss from './styles/App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import styleConsts from './styles/styleConsts';
@@ -29,11 +30,11 @@ function AppContent(props) {
             {Sidebar}
           </Box>
           <Routes>
-            <Route path="/profile" element={<Profile state={props.state.profilePage} />} />
-            <Route path="/messages/*" element={ <Messages state={props.state.messagesPage} /> } />
-            <Route path="/news/*" element={<News />} />
-            <Route path="/music" element={<Music />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/profile" element={<Profile state={props.state} />} />
+            <Route path="/messages/*" element={ <Messages state={props.state} /> } />
+            <Route path="/news/*" element={<News state={props.state} />} />
+            <Route path="/music" element={<Music state={props.state} />} />
+            <Route path="/settings" element={<Settings state={props.state} />} />
           </Routes>
         </Box>
       </Box>
