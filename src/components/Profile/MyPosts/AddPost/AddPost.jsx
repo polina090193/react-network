@@ -1,24 +1,23 @@
 import React from "react"
+import { addPostCreator, updateNewPostTextCreator } from "@/redux/reducers/profile-reducer"
+import store from "@/redux/store";
 
 const AddPost = (props) => {
-  console.log('AddPost', props)
+  const newPost = React.createRef()
 
-  const addPostTextarea = React.createRef()
-
-  const onAddPostClick = () => {
-    props.addPost()
-    props.updateNewPostText('')
+  const addPost = () => {
+    store.dispatch(addPostCreator())
   }
 
   const onPostChange = () => {
-    const newText = addPostTextarea.current.value
-    props.updateNewPostText(newText)
+    const text = newPost.current.value;
+    store.dispatch(updateNewPostTextCreator(text))
   }
 
   return (
     <div>
-      <textarea onChange={onPostChange} ref={addPostTextarea} value={props.newPostText} name="" id="" cols="30" rows="10" />
-      <button onClick={onAddPostClick}>Add Post</button>
+      <textarea onChange={onPostChange} ref={newPost} value={props.newPostText} />
+      <button onClick={addPost}>Add Post</button>
     </div>
   )
 }
