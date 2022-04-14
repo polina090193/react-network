@@ -17,9 +17,12 @@ const Chat = (props) => {
   return (
   <div className={ChatCss.chat}>
     {messagesElements}
-    <SendMessage />
+    <SendMessage 
+      state={props.state}
+      newMessageBody={props.state.messagesPage.newMessageBody}
+    />
   </div>
   )
 }
-
+//state={props.state} newPostText={props.state.profilePage.newPostText}
 export default Chat

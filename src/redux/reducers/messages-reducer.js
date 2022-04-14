@@ -16,11 +16,13 @@ const initialState = {
 
 const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case SEND_MESSAGE:
       const body = state.newMessageBody
-      state.messages.push({id: 8, message: body})
+      state.messages.push({id: 8, from: 'You', time: '00:00', message: body})
       state.newMessageBody = ''
       return state
+
     case UPDATE_NEW_MESSAGE_BODY:
       state.newMessageBody = action.body
       return state
@@ -32,7 +34,7 @@ const messagesReducer = (state = initialState, action) => {
 export const sendMessageCreator = () => ({type: SEND_MESSAGE})
 export const updateNewMessageBodyCreator = (text) => ({
   type: UPDATE_NEW_MESSAGE_BODY,
-  text: text
+  body: text
 })
 
 export default messagesReducer

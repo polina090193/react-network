@@ -7,7 +7,11 @@ const Messages = (props) => {
   return (
     <main className={MessagesCss.main}>
       <ContactsList contacts={props.state.messagesPage.contacts} />
-      <Chat messages={props.state.messagesPage.messages} className={MessagesCss.chat} />
+      <Chat
+        state={props.state}
+        messages={props.state.messagesPage.messages}
+        className={MessagesCss.chat} 
+      />
     </main>
   )
 }
