@@ -11,21 +11,28 @@ const initialState = {
     { id: '2', from: 'You', time: '12:01', message: 'Hi' },
     { id: '3', from: 'John', time: '12:02', message: 'How are you?' },
   ],
-  newMessageBody: 'hi'
+  newMessageBody: ''
 }
 
 const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
 
-    case SEND_MESSAGE:
-      const body = state.newMessageBody
-      state.messages.push({id: 8, from: 'You', time: '00:00', message: body})
-      state.newMessageBody = ''
-      return state
+    case SEND_MESSAGE: {
+      const stateCopy = {...state}
+      stateCopy.messages = [...state.messages]
+      const body = stateCopy.newMessageBody
 
-    case UPDATE_NEW_MESSAGE_BODY:
-      state.newMessageBody = action.body
-      return state
+      stateCopy.messages.push({id: 8, from: 'You', time: '00:00', message: body})
+      stateCopy.newMessageBody = ''
+      return stateCopy
+    }
+
+    case UPDATE_NEW_MESSAGE_BODY: {
+      const stateCopy = {...state}
+      stateCopy.newMessageBody = action.body
+      return stateCopy
+    }
+
     default:
       return state
   }

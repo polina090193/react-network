@@ -1,26 +1,23 @@
 import React from "react"
-import { sendMessageCreator, updateNewMessageBodyCreator } from "@/redux/reducers/messages-reducer";
-import store from "@/redux/store";
 
 const SendMessage = (props) => {
 
-  const sendMessageTextarea = React.createRef()
+  const sendMessageArea = React.createRef()
 
-  const sendMessage = () => {
-    store.dispatch(sendMessageCreator())
+  const onSend = () => {
+    props.sendMessage()
   }
 
   const onMessageChange = () => {
-    const text = sendMessageTextarea.current.value;
-    console.log('text', text)
-    store.dispatch(updateNewMessageBodyCreator(text))
+    const text = sendMessageArea.current.value;
+    props.updateNewMessageBody(text)
   }
 
 
   return (
     <div>
-      <textarea onChange={onMessageChange} ref={sendMessageTextarea} value={props.newMessageBody}></textarea>
-      <button onClick={sendMessage}>Send</button>
+      <textarea onChange={onMessageChange} ref={sendMessageArea} value={props.newMessageBody}></textarea>
+      <button onClick={onSend}>Send</button>
     </div>
   )
 }
