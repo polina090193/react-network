@@ -18,8 +18,10 @@ const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case SEND_MESSAGE: {
-      const stateCopy = {...state}
-      stateCopy.messages = [...state.messages]
+      const stateCopy = {
+        ...state,
+        messages: [...state.messages],
+      }
       const body = stateCopy.newMessageBody
 
       stateCopy.messages.push({id: 8, from: 'You', time: '00:00', message: body})
