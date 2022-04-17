@@ -18,21 +18,19 @@ const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case SEND_MESSAGE: {
-      const stateCopy = {
+      const body = state.newMessageBody
+      return {
         ...state,
-        messages: [...state.messages],
-      }
-      const body = stateCopy.newMessageBody
-
-      stateCopy.messages.push({id: 8, from: 'You', time: '00:00', message: body})
-      stateCopy.newMessageBody = ''
-      return stateCopy
+        newMessageBody: '',
+        messages: [...state.messages, { id: 8, from: 'You', time: '00:00', message: body }]
+      };
     }
 
     case UPDATE_NEW_MESSAGE_BODY: {
-      const stateCopy = {...state}
-      stateCopy.newMessageBody = action.body
-      return stateCopy
+      return {
+        ...state,
+        newMessageBody: action.body
+      };
     }
 
     default:
@@ -40,7 +38,7 @@ const messagesReducer = (state = initialState, action) => {
   }
 }
 
-export const sendMessageCreator = () => ({type: SEND_MESSAGE})
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE })
 export const updateNewMessageBodyCreator = (text) => ({
   type: UPDATE_NEW_MESSAGE_BODY,
   body: text
