@@ -1,10 +1,9 @@
-import UsersCss from './Users.module.css'
+import UsersListContainer from './UsersList/UsersListContainer'
 
-const Users = () => {
+const Users = (props) => {
+
   return (
-    <main>
-      <p className="item">Users</p>
-    </main>
+    <UsersListContainer />
   )
 }
 

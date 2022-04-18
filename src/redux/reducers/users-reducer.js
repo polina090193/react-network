@@ -26,7 +26,7 @@ const initialState = {
       city: 'Vienna',
       country: 'Austria',
       status: 'Working from home',
-      avatar: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fquasa.io%2Fmedia%2Ftop-10-challenges-of-working-from-home-for-employers&psig=AOvVaw3BaQvgWZfk3-Fy1WlMXvia&ust=1650362583363000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLDLnfCtnfcCFQAAAAAdAAAAABAJ',
+      avatar: 'https://riskonnect.com/wp-content/uploads/2021/05/blog-5-WFH-Risks-That-Are-Here-to-Stay.jpg',
       followed: true,
     },
   ],
@@ -35,13 +35,23 @@ const initialState = {
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
 
+    case TOGGLE_FOLLOW: {
+      if (action.userId) {
+        const stateCopy = { ...state }
+        stateCopy.users = [ ...state.users ]
+        const userIndex = stateCopy.users.findIndex(user => user.id === action.userId)
+        stateCopy.users[userIndex].followed = !stateCopy.users[userIndex].followed
 
+        return stateCopy
+      }
+      break
+    }
 
     default:
       return state
   }
 }
 
-export const toggleFollowCreator = () => ({ type: TOGGLE_FOLLOW })
+export const toggleFollowCreator = (userId) => ({ type: TOGGLE_FOLLOW, userId })
 
 export default usersReducer
