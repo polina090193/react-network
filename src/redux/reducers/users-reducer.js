@@ -1,4 +1,5 @@
 const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
+const SET_USERS = 'SET_USERS'
 
 const initialState = {
   users: [
@@ -50,11 +51,16 @@ const usersReducer = (state = initialState, action) => {
       break
     }
 
+    case SET_USERS: {
+      return { ...state, users: [ ...state.users, ...action.users ]}
+    }
+
     default:
       return state
   }
 }
 
 export const toggleFollowCreator = (userId) => ({ type: TOGGLE_FOLLOW, userId })
+export const setUsersCreator = (users) => ({ type: SET_USERS, users })
 
 export default usersReducer
