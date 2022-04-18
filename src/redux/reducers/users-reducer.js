@@ -37,10 +37,13 @@ const usersReducer = (state = initialState, action) => {
 
     case TOGGLE_FOLLOW: {
       if (action.userId) {
-        const stateCopy = { ...state }
-        stateCopy.users = [ ...state.users ]
-        const userIndex = stateCopy.users.findIndex(user => user.id === action.userId)
-        stateCopy.users[userIndex].followed = !stateCopy.users[userIndex].followed
+        const stateCopy = {
+          ...state,
+          users: [ ...state.users.map(user => {
+            if (user.id === action.userId) user.followed = !user.followed
+            return user
+          }) ]
+        }
 
         return stateCopy
       }
