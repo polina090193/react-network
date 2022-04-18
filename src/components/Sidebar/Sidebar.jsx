@@ -6,6 +6,7 @@ const Sidebar = (
     <MenuButton link="/profile" title="Profile" />
     <MenuButton link="/messages" title="Messages" />
     <MenuButton link="/news" title="News" />
+    <MenuButton link="/users" title="Users" />
     <MenuButton link="/music" title="Music" />
     <MenuButton link="/settings" title="Settings" />
   </nav>
