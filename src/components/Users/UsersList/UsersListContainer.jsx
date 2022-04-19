@@ -1,4 +1,4 @@
-import Users from "./UsersList";
+import Users from "./UsersListClassComp";
 import { connect } from "react-redux";
 import { setUsersCreator } from "@/redux/reducers/users-reducer";
 

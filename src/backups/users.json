@@ -27,6 +27,14 @@
             "status": "Working from home",
             "avatar": "https://riskonnect.com/wp-content/uploads/2021/05/blog-5-WFH-Risks-That-Are-Here-to-Stay.jpg",
             "followed": true
+        },
+        {
+            "id": 4,
+            "name": "Anonymus",
+            "city": "Secret Town",
+            "country": "Nowhere",
+            "status": "Stay tuned",
+            "followed": true
         }
     ]
 }

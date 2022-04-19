@@ -21,7 +21,7 @@ const User = (props) => {
 
   return (
     <UserPaper>
-      <img src={user.avatar} alt={user.name} className={userCss.avatar} />
+      <img src={user.avatar ? user.avatar : '/react.svg'} alt={user.name} className={userCss.avatar} />
       <div>
         <h3>{user.name} ({user.city}, {user.country})</h3>
         <p>{user.status}</p>
