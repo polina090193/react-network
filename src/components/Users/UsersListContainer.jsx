@@ -1,4 +1,4 @@
-import Users from "./UsersListClassComp";
+import UsersAPIContainer from "./UsersAPIContainer";
 import { connect } from "react-redux";
 import { setUsersCreator } from "@/redux/reducers/users-reducer";
 
@@ -17,6 +17,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
+const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIContainer);
 
 export default UsersContainer

@@ -8,7 +8,7 @@ import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
 import News from './components/News/News';
-import Users from './components/Users/Users';
+import Users from './components/Users/UsersListContainer';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
