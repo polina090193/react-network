@@ -1,8 +1,10 @@
 const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 
 const initialState = {
   users: [],
+  isFetching: false,
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -27,6 +29,10 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, users: [ ...action.users ]}
     }
 
+    case TOGGLE_IS_FETCHING: {
+      return { ...state, isFetching: action.isFetching }
+    }
+
     default:
       return state
   }
@@ -34,5 +40,6 @@ const usersReducer = (state = initialState, action) => {
 
 export const toggleFollowCreator = (userId) => ({ type: TOGGLE_FOLLOW, userId })
 export const setUsersCreator = (users) => ({ type: SET_USERS, users })
+export const toggleIsFetchingCreator = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
 export default usersReducer
