@@ -7,7 +7,6 @@ const reducers = combineReducers({
   profilePage: profileReducer,
   messagesPage: messagesReducer,
   usersPage: usersReducer,
-  // sidebar: sidebarReducer,
 })
 
 const store = createStore(reducers)

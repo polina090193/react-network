@@ -6,13 +6,15 @@ import Spinner from '@/components/Spinner/Spinner'
 class UsersAPI extends React.Component {
 
   componentDidMount() {
-    this.props.toggleIsFetching(true)
-    axios
-      .get('https://react-polina090193.free.beeceptor.com/network-users')
-      .then(res => {
-        this.props.setUsers(res.data.data)
-        this.props.toggleIsFetching(false)
-      })
+    if (!this.props.users.length) {
+      this.props.toggleIsFetching(true)
+      axios
+        .get('https://react-polina090193.free.beeceptor.com/network-users')
+        .then(res => {
+          this.props.setUsers(res.data.data)
+          this.props.toggleIsFetching(false)
+        })
+    }
   }
 
   render() {
