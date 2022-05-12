@@ -2,6 +2,7 @@ import Paper from "@mui/material/Paper"
 import userCss from './User.module.css'
 import styled from "@emotion/styled";
 import styleConsts from "@/styles/styleConsts";
+import MenuButton from '@c/MenuButton/MenuButton'
 
 const UserPaper = styled(Paper)`
   display: flex;
@@ -23,7 +24,7 @@ const User = (props) => {
     <UserPaper>
       <img src={user.avatar ? user.avatar : '/react.svg'} alt={user.name} className={userCss.avatar} />
       <div>
-        <h3>{user.name} ({user.city}, {user.country})</h3>
+        <MenuButton link={`/profile/${user.id}`} title={`${user.name} (${user.city}, ${user.country})`} />
         <p>{user.status}</p>
       </div>
       <button onClick={onToggleFollow}>{ user.followed ? 'Unfollow' : 'Follow' }</button>

@@ -1,6 +1,6 @@
 import UsersAPIContainer from "./UsersAPIContainer";
 import { connect } from "react-redux";
-import { setUsersCreator, toggleIsFetchingCreator } from "@/redux/reducers/users-reducer";
+import { setUsers, toggleIsFetching } from "@/redux/reducers/users-reducer";
 
 const mapStateToProps = (state) => {
   return {
@@ -9,17 +9,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setUsers: (users) => {
-      const action = setUsersCreator(users);
-      dispatch(action);
-    },
-    toggleIsFetching: (isFetching) => {
-      const action = toggleIsFetchingCreator(isFetching);
-      dispatch(action);
-    },
-  }
+const mapDispatchToProps = {
+  setUsers,
+  toggleIsFetching,
 }
 
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIContainer);

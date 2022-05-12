@@ -1,9 +1,10 @@
 import MyPostsContainer from "./MyPosts/MyPostsContainer"
+import ProfileInfo from "./ProfileInfo"
 
 const Profile = (props) => {
   return (
     <main>
-      <p className="item">The Profile</p>
+      <ProfileInfo {...props} />
       <MyPostsContainer />
     </main>
   )

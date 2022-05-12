@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import styleConsts from './styles/styleConsts';
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile';
+import Profile from './components/Profile/ProfileContainer';
 import Messages from './components/Messages/Messages';
 import News from './components/News/News';
 import Users from './components/Users/UsersListContainer';
@@ -30,7 +30,8 @@ function AppContent() {
             {Sidebar}
           </Box>
           <Routes>
-            <Route path="/profile" element={<Profile />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path="/profile/:userId" element={<Profile />} />
             <Route path="/messages/*" element={ <Messages /> } />
             <Route path="/news/*" element={<News />} />
             <Route path="/users" element={<Users />} />

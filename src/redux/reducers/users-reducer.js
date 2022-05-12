@@ -38,8 +38,8 @@ const usersReducer = (state = initialState, action) => {
   }
 }
 
-export const toggleFollowCreator = (userId) => ({ type: TOGGLE_FOLLOW, userId })
-export const setUsersCreator = (users) => ({ type: SET_USERS, users })
-export const toggleIsFetchingCreator = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
+export const toggleFollow = (userId) => ({ type: TOGGLE_FOLLOW, userId })
+export const setUsers = (users) => ({ type: SET_USERS, users })
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
 export default usersReducer
