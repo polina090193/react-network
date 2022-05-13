@@ -1,7 +1,7 @@
 import React from 'react'
-import axios from 'axios'
 import Profile from './Profile'
 import Spinner from '@/components/Spinner/Spinner'
+import { getProfile } from '@/api/api'
 
 class ProfileAPI extends React.Component {
 
@@ -9,9 +9,7 @@ class ProfileAPI extends React.Component {
     const userId = this.props.router.params.userId || 1
 
     this.props.toggleIsFetching(true)
-    axios
-      .get(`https://react-polina090193.free.beeceptor.com/network-users/${userId}`)
-      .then(res => {
+    getProfile(userId).then(res => {
         this.props.setProfile(res.data.data)
         this.props.toggleIsFetching(false)
       })
