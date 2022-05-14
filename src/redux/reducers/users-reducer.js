@@ -44,7 +44,7 @@ export const toggleFollow = (userId) => ({ type: TOGGLE_FOLLOW, userId })
 export const setUsers = (users) => ({ type: SET_USERS, users })
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
-export const getUsersTC = () => {
+export const getUsers = () => {
   return (dispatch) => {
     dispatch(toggleIsFetching(true))
     usersAPI.getUsers().then(res => {

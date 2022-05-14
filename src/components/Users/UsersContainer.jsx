@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from "react-redux";
-import { setUsers, toggleIsFetching, getUsersTC } from "@/redux/reducers/users-reducer";
+import { setUsers, toggleIsFetching, getUsers } from "@/redux/reducers/users-reducer";
 import Users from './Users'
 import Spinner from '@c/Spinner/Spinner'
 
@@ -8,7 +8,7 @@ class UsersContainer extends React.Component {
 
   componentDidMount() {
     if (!this.props.users.length) {
-      this.props.getUsersTC()
+      this.props.getUsers()
     }
   }
 
@@ -28,9 +28,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  setUsers,
-  toggleIsFetching,
-  getUsersTC,
+  getUsers,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
