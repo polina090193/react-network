@@ -1,6 +1,24 @@
-import UsersAPIContainer from "./UsersAPIContainer";
+import React from 'react'
 import { connect } from "react-redux";
 import { setUsers, toggleIsFetching, getUsersTC } from "@/redux/reducers/users-reducer";
+import Users from './Users'
+import Spinner from '@c/Spinner/Spinner'
+
+class UsersContainer extends React.Component {
+
+  componentDidMount() {
+    if (!this.props.users.length) {
+      this.props.getUsersTC()
+    }
+  }
+
+  render() {
+    return (<div>
+      {this.props.isFetching ? <Spinner /> : <Users users={this.props.users} />}
+    </div>
+    )
+  }
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +33,4 @@ const mapDispatchToProps = {
   getUsersTC,
 }
 
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIContainer);
-
-export default UsersContainer
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
