@@ -1,7 +1,7 @@
 import React from 'react'
 import Profile from './Profile'
 import Spinner from '@/components/Spinner/Spinner'
-import { getProfile } from '@/api/api'
+import { profileAPI } from '@/api/api'
 
 class ProfileAPI extends React.Component {
 
@@ -9,7 +9,7 @@ class ProfileAPI extends React.Component {
     const userId = this.props.router.params.userId || 1
 
     this.props.toggleIsFetching(true)
-    getProfile(userId).then(res => {
+    profileAPI.getProfile(userId).then(res => {
         this.props.setProfile(res.data.data)
         this.props.toggleIsFetching(false)
       })
