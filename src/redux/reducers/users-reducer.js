@@ -1,4 +1,4 @@
-import { usersAPI } from "../../api/api"
+import { usersAPI } from "@/api/api"
 
 const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
@@ -45,12 +45,15 @@ export const setUsers = (users) => ({ type: SET_USERS, users })
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
 export const getUsers = () => {
+
   return (dispatch) => {
     dispatch(toggleIsFetching(true))
+    
     usersAPI.getUsers().then(res => {
       dispatch(setUsers(res.data.data))
       dispatch(toggleIsFetching(false))
     })
+
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from "react-redux";
-import { setUsers, toggleIsFetching, getUsers } from "@/redux/reducers/users-reducer";
+import { getUsers } from "@/redux/reducers/users-reducer";
 import Users from './Users'
 import Spinner from '@c/Spinner/Spinner'
 

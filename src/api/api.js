@@ -14,6 +14,7 @@ export const usersAPI = {
 
 export const profileAPI = {
   getProfile(userId) {
+    console.log('profileAPI', userId);
     return axiosIns.get(`network-users/${userId}`)
   }
 }

@@ -1,7 +1,28 @@
-import ProfileAPIContainer from "./ProfileAPIContainer";
+import React from 'react'
 import { connect } from "react-redux";
-import { setProfile, addPostCreator, updateNewPostTextCreator, toggleIsFetching } from "@/redux/reducers/profile-reducer";
+import { getProfile } from "@/redux/reducers/profile-reducer";
 import withRouter from "@/helpers/withRouter";
+import Profile from './Profile'
+import Spinner from '@/components/Spinner/Spinner'
+
+class ProfileContainer extends React.Component {
+  
+  componentDidMount() {
+    const userId = this.props.router.params.userId || 1
+    this.props.getProfile(userId)
+  }
+
+  componentDidUpdate() {
+    if (!this.props.router.params.userId) this.props.getProfile(1)
+  }
+
+  render() {
+    return (<div>
+      {this.props.isFetching ? <Spinner /> : <Profile {...this.props} />}
+    </div>
+    )
+  }
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -11,14 +32,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  setProfile,
-  addPostCreator,
-  updateNewPostTextCreator,
-  toggleIsFetching,
+  getProfile,
 }
 
-const WithRouterProfile = withRouter(ProfileAPIContainer)
+const WithRouterProfile = withRouter(ProfileContainer)
 
-const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(WithRouterProfile);
-
-export default ProfileContainer
+export default connect(mapStateToProps, mapDispatchToProps)(WithRouterProfile);
