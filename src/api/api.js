@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'https://react-polina090193.free.beeceptor.com/'
+const baseURL = 'https://react0901-users.free.beeceptor.com/'
 
 const axiosIns = axios.create({
   baseURL,
@@ -14,7 +14,6 @@ export const usersAPI = {
 
 export const profileAPI = {
   getProfile(userId) {
-    console.log('profileAPI', userId);
     return axiosIns.get(`network-users/${userId}`)
   }
 }

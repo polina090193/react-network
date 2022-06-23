@@ -6,14 +6,10 @@ import Profile from './Profile'
 import Spinner from '@/components/Spinner/Spinner'
 
 class ProfileContainer extends React.Component {
+  userId = this.props.router.params.userId || 1
   
   componentDidMount() {
-    const userId = this.props.router.params.userId || 1
-    this.props.getProfile(userId)
-  }
-
-  componentDidUpdate() {
-    if (!this.props.router.params.userId) this.props.getProfile(1)
+    this.props.getProfile(this.userId)
   }
 
   render() {

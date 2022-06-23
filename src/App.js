@@ -30,11 +30,13 @@ function AppContent() {
             {Sidebar}
           </Box>
           <Routes>
-            <Route path='/profile' element={<Profile />} />
-            <Route path="/profile/:userId" element={<Profile />} />
+            <Route path="/profile" index element={<Profile />} />
             <Route path="/messages/*" element={ <Messages /> } />
             <Route path="/news/*" element={<News />} />
-            <Route path="/users" element={<Users />} />
+            <Route path="users">
+              <Route index element={<Users />} />
+              <Route path=":userId" element={<Profile />} />
+            </Route>
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>

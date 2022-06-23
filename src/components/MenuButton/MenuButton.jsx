@@ -12,7 +12,7 @@ const MenuButton = (props) => {
     <ListItemButton
       component={Link}
       to={props.link}
-      selected={location.pathname.includes(props.link)}
+      selected={location.pathname === props.link}
       sx={{
         paddingLeft: styleConsts.defaultPadding
       }}>

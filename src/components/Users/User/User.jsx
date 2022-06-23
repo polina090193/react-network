@@ -24,7 +24,7 @@ const User = (props) => {
     <UserPaper>
       <img src={user.avatar ? user.avatar : '/react.svg'} alt={user.name} className={userCss.avatar} />
       <div>
-        <MenuButton link={`/profile/${user.id}`} title={`${user.name} (${user.city}, ${user.country})`} />
+        <MenuButton link={`/users/${user.id}`} title={`${user.name} (${user.city}, ${user.country})`} />
         <p>{user.status}</p>
       </div>
       <button onClick={onToggleFollow}>{ user.followed ? 'Unfollow' : 'Follow' }</button>
